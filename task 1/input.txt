@@ -1,0 +1,1 @@
+You can write any input file for tests yourself. You can just copy from the example.
