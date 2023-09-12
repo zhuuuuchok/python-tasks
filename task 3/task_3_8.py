@@ -1,38 +1,26 @@
-#  Запрашиваем ввод первого аргумента
-n_1 = int(input('Please, enter the first number: '))
+def main():
+    n_1 = int(input('Please, enter the first number: '))
+    n_2 = int(input('Please, enter the second number: '))
+    choice = input('Please, enter the operation ( + , - , * , / ): ')
 
-# Запрашиваем ввод второго аргумента
-n_2 = int(input('Please, enter the second number: '))
+    # Create variables in which we place lambda expressions
+    # After lambda the parameters for the expression are specified, 
+    # after ":" the operation for the lambda expression is indicated
+    sum = lambda n_1, n_2: n_1 + n_2
+    minus = lambda n_1, n_2: n_1 - n_2
+    mult = lambda n_1, n_2: n_1 * n_2
+    division = lambda n_1, n_2: n_1 / n_2
 
-# Запрашиваем ввод третьего аргумента. 
-# Пользователю нужно выбрать одну из операций в скобках
-choice = input('Please, enter the operation (+,-,*,/): ')
-
-# Создаем переменные в которые помещаем лямбда-выражения
-# После lambda  указаны параметры для выражения, 
-# после ":" указывается операция для lambda-выражения
-sum = lambda n_1, n_2: n_1 + n_2
-minus = lambda n_1, n_2: n_1 - n_2
-mult = lambda n_1, n_2: n_1 * n_2
-division = lambda n_1, n_2: n_1 / n_2
-
-# Символу, каждого математического действия,
-# присваеваем одну из созданных ранее переменных
-
-if choice == "+":
-    print (f'Result of operation: {sum(n_1, n_2)}')
-    
-#   
-elif choice == "-":
-    print (f'Result of operation: {minus(n_1, n_2)}')
-#    
-elif choice == "*":
-    print (f'Result of operation: {mult(n_1, n_2)}')
-#    
-elif choice == "/":
-    print (f'Result of operation: {division(n_1, n_2)}')
-
-# Если пользователь введет символ, который не используется в операциях,
-# программа выведет следующее сообщение
-else:
-    print('select another option')    
+    # We assign the symbol of each mathematical operation to one of  variables
+    if choice == "+":
+        print (f'Result of operation: {sum(n_1, n_2)}')
+    elif choice == "-":
+        print (f'Result of operation: {minus(n_1, n_2)}')
+    elif choice == "*":
+        print (f'Result of operation: {mult(n_1, n_2)}')
+    elif choice == "/":
+        print (f'Result of operation: {division(n_1, n_2)}')
+    else:
+        print('select another option')
+        
+main()
