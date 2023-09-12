@@ -3,14 +3,14 @@ def main():
 
     def leap_year(year):
         if year % 4 != 0 :
-            print('False')
-        elif year % 100 == 0:
+            return False
+        if year % 100 == 0:
             if year % 400 == 0:
-                print('True')
+                return True
             else:
-                print('False')
+                return False
         else:
-            print('True')
+            return True
 
     print (f'{leap_year(year)}')
 
